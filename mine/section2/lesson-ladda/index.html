@@ -1,0 +1,135 @@
+<!DOCTYPE html >
+<html lang="en" ng-app="minmaxmodle"><!-- module to control whole logic of application is called minmax-->
+<head>
+	<title >Data Binding</title >
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+		  integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+	<link href="../../bower_components/ladda/dist/ladda-themeless.min.css" rel="stylesheet">
+	<link href="main.css" rel="stylesheet">
+</head>
+
+<body>
+
+	<nav class="navbar navbar-inverse navbar-fixed-top" >
+		<div class="container" >
+			<div class="navbar-header" >
+				<a class="navbar-brand" href="/" >Controllers</a >
+			</div >
+		</div >
+	</nav >
+
+	<br />
+	<br />
+	<br />
+	<br />
+
+	<div class="container main-content" ng-controller="MinMaxCtrl">
+
+		<!-- on form submit call onSubmit() function from controller.
+		 novalidate="novalidate" is to stop bowser to triger any HTML5 validation
+		 name="theForm" angular will automatically add to $scope
+		 onSubmit(theForm.$valid) if theForm.$valid s true it will pass true if not then false
+		 and in onSubmit() you need to handle this
+		 -->
+		<form ng-submit="onSubmit()"
+			  novalidate="novalidate"
+			  name="theForm">
+
+			<div class="form-group" >
+				<label for="name" >Name</label >
+				<input type="text"
+					   class="form-control"
+					   ng-model="formModel.name"
+					   required="required"
+					   id="name">
+			</div >
+
+			<div class="form-group">
+				<label for="email" >Email</label >
+				<input type="email"
+					   class="form-control"
+					   ng-model="formModel.email"
+					   id="email"
+					   required="required"
+					   name="email" >
+			</div >
+
+
+			<div class="form-group" >
+				<label for="username" >Username</label >
+				<input type="text"
+					   class="form-control"
+					   ng-model="formModel.username"
+					   ng-pattern="/^[A-Za-z0-9_]{1,15}$/"
+					   ng-minlength="7"
+					   ng-pattern-err-type="badUsername"
+					   required="required"
+					   id="username" >
+			</div >
+
+
+			<div class="form-group" >
+				<label for="age" >Age</label >
+				<input type="number"
+					   class="form-control"
+					   ng-model="formModel.age"
+					   min="18"
+					   max="64"
+					   ng-min-err-type="tooYoung"
+					   ng-max-err-type="tooOld"
+					   required="required"
+					   id="age" >
+			</div >
+
+
+			<div class="form-group" >
+				<label for="sex" >Sex</label >
+				<select id="sex" class="form-control" ng-model="formModel.sex" required="required">
+					<option value="" >Please Choose</option >
+					<option value="male" >Male</option >
+					<option value="female" >Female</option >
+				</select >
+			</div >
+
+
+			<div class="form-group" >
+				<label for="password" class="control-label">Password</label >
+				<input type="password"
+					   class="form-control"
+					   ng-model="formModel.password"
+					   id="password"
+					   required="required"
+					   ng-minlength="10">
+			</div >
+
+
+			<div class="form-group" >
+				<!-- ng-click="onSubmit()" will capture any click on the register button and call onSubmit() in you controller-->
+				<!-- not good for validation to do this like that -->
+				<!-- button class="btn btn-primary" ng-click="onSubmit()">Register</button -->
+				<!-- do standard form submit and catch it with ng-submit-->
+				<button class="btn btn-primary"
+						ladda="laddaSubmitting"
+						data-style="expand-right"
+						type="submit" >
+						<!-- if laddaSubmitting from main.js from $scope is true show Registering-->
+						<span ng-show="laddaSubmitting">Registering</span>
+						<span ng-show="!laddaSubmitting">Register</span>
+				</button >
+			</div >
+
+
+		</form >
+
+		<pre>{{ formModel | json }}</pre>
+
+	</div >
+
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.0/angular.min.js"></script>
+	<script src="../../bower_components/angular-auto-validate/dist/jcs-auto-validate.min.js" ></script >
+	<script src="../../bower_components/ladda/dist/spin.min.js"></script>
+	<script src="../../bower_components/ladda/dist/ladda.min.js"></script>
+	<script src="../../bower_components/angular-ladda/dist/angular-ladda.min.js"></script>
+	<script src="main.js" ></script >
+</body>
+</html>

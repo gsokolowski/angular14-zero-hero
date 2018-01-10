@@ -1,0 +1,22 @@
+<!DOCTYPE html >
+<html lang="en" ng-app="">
+<head>
+	<title >Data Binding</title >
+	<link href="../libs/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+	<link href="main.css" rel="stylesheet">
+</head>
+
+<body>
+
+<div class="container" ng-init="title='my title'; mycheckbox=false;">
+	<h1>Title is here {{ title }} </h1>
+	<h3>and checkbox is:  {{ mycheckbox }} </h3>
+
+	<input type="text" class="form-control" ng-model="title">
+	<input type="checkbox" class="form-control" ng-model="mycheckbox">
+</div>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.0/angular.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,19 @@
+
+var App = angular.module('minmaxmodle', []);
+
+App.controller('MinMaxCtrl', function ($scope) {
+    // $scope is special variable
+    // anything we add to $scope variable we can data bind to HTML
+
+
+    // so lets add to scope fromModel object
+    // object
+    $scope.formModel = {}
+
+    // or functions need to be attached to scope if you intend to use them in HTML
+    $scope.onSubmit = function () {
+
+        console.log("Hey I'm submitted;");
+        console.log($scope.formModel);
+    };
+});

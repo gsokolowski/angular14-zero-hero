@@ -1,0 +1,106 @@
+<!DOCTYPE html >
+<html lang="en" ng-app="minmaxmodle"><!-- module to control whole logic of application is called minmax-->
+<head>
+	<title >Data Binding</title >
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+		  integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+	<link href="main.css" rel="stylesheet">
+</head>
+
+<body>
+
+	<nav class="navbar navbar-inverse navbar-fixed-top" >
+		<div class="container" >
+			<div class="navbar-header" >
+				<a class="navbar-brand" href="/" >Controllers</a >
+			</div >
+		</div >
+	</nav >
+
+	<br />
+	<br />
+	<br />
+	<br />
+
+	<div class="container main-content" ng-controller="MinMaxCtrl">
+
+		<!-- on form submit call onSubmit() function from controller.
+		 novalidate="novalidate" is to stop bowser to triger any HTML5 validation
+		 name="theForm" angular will automatically add to $scope
+		 onSubmit(theForm.$valid) if theForm.$valid s true it will pass true if not then false
+		 and in onSubmit() you need to handle this
+		 -->
+		<form ng-submit="onSubmit(theForm.$valid)" novalidate="novalidate" name="theForm">
+			<div class="form-group" >
+				<label for="name" >Name</label >
+				<!-- ng-model="formModel.name" this is two way binding to object formModel in scope of controller-->
+				<!-- HTML 5 form validation required="required"-->
+				<input type="text" class="form-control" ng-model="formModel.name" id="name">
+			</div >
+
+			<!-- if 'has-error' value is true then class add has-error will be added to div and bootstrap will add nice red outline to that input-->
+			<!-- if is not valid it will show as success -->
+			<div class="form-group" ng-class="
+			{
+			'has-error':!theForm.email.$valid && (!theForm.$pristine || theForm.$submitted),
+			'has-success':theForm.email.$valid && (!theForm.$pristine || theForm.$submitted)
+			}
+		">
+
+				<label for="email" >Email</label >
+				<input type="email" class="form-control" ng-model="formModel.email" id="email" required="required" name="email" >
+
+				<p class="help-block" ng-show="theForm.email.$error.required && (!theForm.$pristine || theForm.$submitted)">
+					<!-- if theForm.email.$error.required is true this <p> block will be shown -->
+					This field is required
+				</p>
+				<p class="help-block" ng-show="theForm.email.$error.email && (!theForm.$pristine  || theForm.$submitted)">
+					<!-- if theForm.email.$error.email is true this <p> block will be shown -->
+					Please enter an email with at least an @ symbol
+				</p>
+
+				<pre>Validation? {{ theForm.email.$error | json}}</pre>
+				<pre>Field valid? {{ theForm.email.$valid }}</pre>
+				<pre>Form Pristine? {{ theForm.$pristine }}</pre>
+				<pre>Form Submitted? {{ theForm.$submitted }}</pre>
+			</div >
+
+			<div class="form-group" >
+				<label for="username" >Username</label >
+				<input type="text" class="form-control" ng-model="formModel.username" id="username" >
+			</div >
+
+			<div class="form-group" >
+				<label for="age" >Age</label >
+				<input type="text" class="form-control" ng-model="formModel.age" id="age" >
+			</div >
+
+			<div class="form-group" >
+				<label for="sex" >Sex</label >
+				<select id="sex" class="form-control" ng-model="formModel.sex" >
+					<option value="" >Please Choose</option >
+					<option value="male" >Male</option >
+					<option value="female" >Female</option >
+				</select >
+			</div >
+
+			<div class="form-group" >
+				<!-- ng-click="onSubmit()" will capture any click on the register button and call onSubmit() in you controller-->
+				<!-- not good for validation to do this like that -->
+				<!-- button class="btn btn-primary" ng-click="onSubmit()">Register</button -->
+
+				<!-- do standard form submit and catch it with ng-submit-->
+				<button class="btn btn-primary" type="submit" >Register</button >
+
+			</div >
+
+		</form >
+
+		<pre>{{ formModel | json }}</pre>
+		<pre>{{ theForm | json }}</pre>
+	</div >
+
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.0/angular.min.js"></script>
+	<script src="main.js" ></script >
+</body>
+</html>
