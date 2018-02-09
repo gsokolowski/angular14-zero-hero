@@ -10,7 +10,7 @@ var app = angular.module('codecraft', [
 ]);
 
 app.config(function ($httpProvider, $resourceProvider, laddaProvider, $datepickerProvider) {
-	$httpProvider.defaults.headers.common['Authorization'] = 'Token 20002cd74d5ce124ae219e739e18956614aab490';
+	$httpProvider.defaults.headers.common['Authorization'] = 'Token 826b1873000ab4c4c4c85327408f89aab9b9bd7c';
 	$resourceProvider.defaults.stripTrailingSlashes = false;
 	laddaProvider.setOption({
 		style: 'expand-right'
@@ -22,11 +22,7 @@ app.config(function ($httpProvider, $resourceProvider, laddaProvider, $datepicke
 });
 
 app.factory("Contact", function ($resource) {
-	return $resource("https://codecraftpro.com/api/samples/v1/contact/:id/", {id: '@id'}, {
-		update: {
-			method: 'PUT'
-		}
-	});
+	return $resource("https://codecraftpro.com/api/samples/v1/contact/:id/", {id: '@id'}, {update: {method: 'PUT'}});
 });
 
 

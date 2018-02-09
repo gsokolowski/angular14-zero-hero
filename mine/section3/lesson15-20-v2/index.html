@@ -27,13 +27,19 @@
                 <span class="glyphicon glyphicon-search"></span>
 
                 <div class="form-group">
-                    <input type="text"
-                           class="form-control"
-                           id="name"
-                           ng-model="search.$"
-                           placeholder="Search name..."
-                    />
+                    <!-- ng-model="search.$" this allows to do search on all properties of person.
+                    So person.name person.email etc so you dont need 2 serch fields -->
+                    <input type="text" class="form-control" id="name" ng-model="search.$" placeholder="Search name..."/>
                 </div>
+
+                <!--<div class="form-group" >-->
+                    <!--<input type="text" class="form-control" id="name" ng-model="search.name" placeholder="Search name..."/>-->
+                <!--</div>-->
+
+                <!--<div class="form-group" >-->
+                    <!--<input type="text" class="form-control" id="email" ng-model="search.email" placeholder="Search name..."/>-->
+                <!--</div>-->
+
             </form>
         </div>
     </div>
@@ -52,10 +58,18 @@
                 <!-- search anywhere in object all object properties by passing $ from ng-model="search.$" -->
                 <!-- if $index is index (true) then display colour if $index null then then don't do colour -->
                 <!-- this part will display list of persons ng-repeat repeats tr and gets person by person -->
+                <!-- if is row selected $index == selectedIndex then do '#e4e4e4' otherwise none ng-style will set css style-->
+                <!-- selectedIndex comes from function selectPerson and it is bind to $scope that's why you can use it here
+                When you click on the row you call selectPerson($index) and you pass that index then index gets added to the
+                $scope and you can use it with ng-style. It doesn't matter what it's first what second this is js
+                -->
+                <!-- you can search also on oposit to searched word like that !.com -->
                 <tr ng-repeat="person in persons | filter:search"
-                    ng-style="{'background-color': $index == selectedIndex ? 'lightgray' : ''}"
-                    ng-click="selectPerson($index, person)"
-                >
+                    ng-style="{'background-color': $index == selectedIndex ? '#e4e4e4' : ''}"
+                    ng-click="selectPerson($index, person)">
+
+                    <!-- you can do sensitiveSearch -->
+
                     <td>{{ $index }}</td> <!-- this will give you row number -->
                     <td>{{ person.name }}</td>
                     <td>{{ person.email }}</td>
@@ -71,7 +85,7 @@
                 <div class="panel-body">
                     <dl>
                         <dt>Name</dt>
-                        <dd>{{selectedPerson.name}}</dd>
+                        <dd>{{selectedPerson.name}}</dd> <!-- this is possible to display because in main.js you bind person to $scope -->
                         <dt>Email</dt>
                         <dd>{{selectedPerson.email}}</dd>
                         <dt>Birthday</dt>
@@ -87,7 +101,9 @@
                     </dl>
                 </div>
             </div>
+
             <pre>{{ search }}</pre>
+
         </div>
     </div>
 </div>

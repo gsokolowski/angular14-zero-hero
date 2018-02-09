@@ -1,0 +1,126 @@
+<!DOCTYPE html >
+<html lang="en" ng-app="codecraft">
+<head>
+    <title>Lists Of Things</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+          integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link href="../../bower_components/ladda/dist/ladda-themeless.min.css" rel="stylesheet">
+    <link href="main.css" rel="stylesheet">
+</head>
+
+<body>
+<nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container">
+        <div class="navbar-header">
+            <a class="navbar-brand"
+               href="/">Lists Of Things
+            </a>
+        </div>
+    </div>
+</nav>
+
+<div class="container main-content" ng-controller="PersonsController">
+
+    <div class="row">
+        <div class="col-md-12">
+            <form class="form-inline well well-sm">
+                <span class="glyphicon glyphicon-search"></span>
+
+                <div class="form-group">
+                    <!-- ng-model="search" bind this directly to search in model $scope.search = ""; -->
+                    <input type="text" class="form-control" id="name" ng-model="search" placeholder="Search name..."/>
+                </div>
+
+                <span class="glyphicon glyphicon-sort-by-attributes" ></span >
+
+                <div class="form-group" >
+                    <select class="form-control" ng-model="order" >
+                        <option value="name" >Name (ASC)</option >
+                        <option value="-name" >Name (DEC)</option >
+                        <option value="email" >Email (ASC)</option >
+                        <option value="-email" >Email (DEC)</option >
+                    </select >
+                </div >
+
+            </form>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-8">
+            <table class="table table-bordered">
+
+                <tr>
+                    <th>#</th>
+                    <th >Name
+                        <span ng-click="order = 'name'" class="glyphicon glyphicon-menu-up" ></span >
+                        <span ng-click="order = '-name'" class="glyphicon glyphicon-menu-down" ></span >
+                    </th >
+                    <th >Email
+                        <span ng-click="order = 'email'" class="glyphicon glyphicon-menu-up" ></span >
+                        <span ng-click="order = '-email'" class="glyphicon glyphicon-menu-down" ></span >
+                    </th >
+                    <th>Birthday</th>
+                </tr>
+                <!-- this part will display list of persons -->
+                <!-- search anywhere in object all object properties by passing $ from ng-model="search.$" -->
+                <!-- if $index is index (true) then display colour if $index null then then don't do colour -->
+                <!-- this part will display list of persons ng-repeat repeats tr and gets person by person -->
+                <!-- if is row selected $index == selectedIndex then do '#e4e4e4' otherwise none ng-style will set css style-->
+                <!-- selectedIndex comes from function selectPerson and it is bind to $scope that's why you can use it here
+                When you click on the row you call selectPerson($index) and you pass that index then index gets added to the
+                $scope and you can use it with ng-style. It doesn't matter what it's first what second this is js
+                -->
+                <!-- you can search also on oposit to searched word like that !.com -->
+                <!-- adding sensitiveSearch to filter no (). it will search by exect fist character -->
+                <!-- orderBy - you need to add order to $scope.order and you need filter  | orderBy:order then you can override order in html template -->
+                <tr ng-repeat="person in persons | filter:sensitiveSearch | orderBy: order"
+                    ng-style="{'background-color': $index == selectedIndex ? '#e4e4e4' : ''}"
+                    ng-click="selectPerson($index, person)">
+
+                    <!-- you can do sensitiveSearch -->
+
+                    <td>{{ $index }}</td> <!-- this will give you row number -->
+                    <td>{{ person.name }}</td>
+                    <td>{{ person.email }}</td>
+                    <td>{{ person.birthdate | date:"longDate" }}</td> <!-- filter will  give you this format March 24, 2015-->
+                </tr>
+
+            </table>
+        </div>
+
+        <div class="col-md-4">
+            <div class="panel panel-default"
+                 ng-style="{'display': showPanel ? 'block' : 'none'}"><!-- display panel only when row is selected  showPannel in $scope true when selected else when not sellected-->
+                <div class="panel-heading">Details</div>
+                <div class="panel-body">
+                    <dl>
+                        <dt>Name</dt>
+                        <dd>{{selectedPerson.name}}</dd> <!-- this is possible to display because in main.js you bind person to $scope -->
+                        <dt>Email</dt>
+                        <dd>{{selectedPerson.email}}</dd>
+                        <dt>Birthday</dt>
+                        <dd>{{selectedPerson.birthdate | date:"longDate"}}</dd>
+                        <dt>Phonenumber</dt>
+                        <dd>{{selectedPerson.phonenumber}}</dd>
+                        <dt>Address</dt>
+                        <dd>{{selectedPerson.address}}</dd>
+                        <dt>City</dt>
+                        <dd>{{selectedPerson.city}}</dd>
+                        <dt>Country</dt>
+                        <dd>{{selectedPerson.country}}</dd>
+                    </dl>
+                </div>
+            </div>
+
+            <pre>{{ search }}</pre>
+
+        </div>
+    </div>
+</div>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.0/angular.min.js"></script>
+<script src="main.js"></script>
+</body>
+</html>
