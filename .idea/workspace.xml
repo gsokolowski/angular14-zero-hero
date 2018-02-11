@@ -2,35 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a558d073-e266-4d9a-8aad-eeab03ce138f" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/mine/section7/lesson57-works/avatar.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/mine/section9/lesson65/avatar.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/watcherTasks.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/mine/section7/lesson57-works/flatty.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/mine/section7/lesson57-works/index.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/mine/section7/lesson57-works/main.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/mine/section7/lesson57-works/main.scss" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/mine/section7/lesson57-works/paper.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/mine/section7/lesson57-works/sandstorm.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/mine/section7/lesson57-works/templates/form.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/mine/section7/lesson57-works/templates/modal.create.tpl.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/mine/section9/lesson65/flatty.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/mine/section9/lesson65/index.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/mine/section9/lesson65/main.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/mine/section9/lesson65/main.css.map" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/mine/section9/lesson65/main.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/mine/section9/lesson65/main.scss" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/mine/section9/lesson65/paper.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/mine/section9/lesson65/sandstorm.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/mine/section9/lesson65/templates/form.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/mine/section9/lesson65/templates/modal.create.tpl.html" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/mine/section7/lesson50/index.html" afterPath="$PROJECT_DIR$/mine/section7/lesson50-works/index.html" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/mine/section7/lesson50/main.css" afterPath="$PROJECT_DIR$/mine/section7/lesson50-works/main.css" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/mine/section7/lesson50/main.js" afterPath="$PROJECT_DIR$/mine/section7/lesson50-works/main.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/mine/section7/lesson50/templates/form.html" afterPath="$PROJECT_DIR$/mine/section7/lesson50-works/templates/form.html" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/mine/section7/lesson50/templates/modal.create.tpl.html" afterPath="$PROJECT_DIR$/mine/section7/lesson50-works/templates/modal.create.tpl.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/mine/section9/lesson65/templates/edit.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/mine/section9/lesson65/templates/list.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/section7/completed/index.html" afterPath="$PROJECT_DIR$/section7/completed/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/section7/completed/main.css" afterPath="$PROJECT_DIR$/section7/completed/main.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mine/section9/lesson65/index.html" afterPath="$PROJECT_DIR$/mine/section9/lesson65/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mine/section9/lesson65/main.js" afterPath="$PROJECT_DIR$/mine/section9/lesson65/main.js" />
     </list>
     <ignored path="angular14-zero-hero.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -49,12 +25,81 @@
     <favorites_list name="angular14-zero-hero" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/mine/section9/lesson65/index.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="391">
+              <caret line="27" column="0" lean-forward="true" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="main.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/mine/section9/lesson65/main.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-29">
+              <caret line="301" column="10" lean-forward="true" selection-start-line="301" selection-start-column="10" selection-end-line="301" selection-end-column="10" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="edit.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/mine/section9/lesson65/templates/edit.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="135">
+              <caret line="9" column="42" lean-forward="true" selection-start-line="9" selection-start-column="42" selection-end-line="9" selection-end-column="42" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="form.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/mine/section9/lesson65/templates/form.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="270">
+              <caret line="18" column="26" lean-forward="true" selection-start-line="18" selection-start-column="26" selection-end-line="18" selection-end-column="26" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="edit.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/section9/completed/templates/edit.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="45">
+              <caret line="3" column="22" lean-forward="true" selection-start-line="3" selection-start-column="22" selection-end-line="3" selection-end-column="22" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="list.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/mine/section9/lesson65/templates/list.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-14">
+              <caret line="18" column="15" lean-forward="true" selection-start-line="18" selection-start-column="15" selection-end-line="18" selection-end-column="15" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="main.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/section9/completed/main.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="461">
+              <caret line="113" column="0" lean-forward="false" selection-start-line="113" selection-start-column="0" selection-end-line="113" selection-end-column="83" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>selectPerson</find>
-      <find>toke</find>
       <find>spinne</find>
       <find>watch</find>
       <find>no res</find>
@@ -83,6 +128,8 @@
       <find>col-2</find>
       <find>ver</find>
       <find>tab</find>
+      <find>Detail</find>
+      <find>selectPerson</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -91,8 +138,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/mine/section2/lesson1/index.html" />
-        <option value="$PROJECT_DIR$/mine/section2/lesson2/index.html" />
         <option value="$PROJECT_DIR$/mine/section2/lesson2/main.js" />
         <option value="$PROJECT_DIR$/mine/section2/lesson3/index.html" />
         <option value="$PROJECT_DIR$/mine/section2/lesson3/main.js" />
@@ -140,8 +185,10 @@
         <option value="$PROJECT_DIR$/mine/section7/lesson57/index.html" />
         <option value="$PROJECT_DIR$/mine/section7/lesson57-works/index.html" />
         <option value="$PROJECT_DIR$/mine/section7/lesson57-works/main.js" />
-        <option value="$PROJECT_DIR$/mine/section9/lesson65/main.js" />
         <option value="$PROJECT_DIR$/mine/section9/lesson65/index.html" />
+        <option value="$PROJECT_DIR$/mine/section9/lesson65/templates/list.html" />
+        <option value="$PROJECT_DIR$/mine/section9/lesson65/templates/edit.html" />
+        <option value="$PROJECT_DIR$/mine/section9/lesson65/main.js" />
       </list>
     </option>
   </component>
@@ -201,6 +248,32 @@
               <item name="mine" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="section9" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="lesson65" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="angular14-zero-hero" type="b2602c69:ProjectViewProjectNode" />
+              <item name="angular14-zero-hero" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="mine" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="section9" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="lesson65" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="templates" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="angular14-zero-hero" type="b2602c69:ProjectViewProjectNode" />
+              <item name="angular14-zero-hero" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="section9" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="angular14-zero-hero" type="b2602c69:ProjectViewProjectNode" />
+              <item name="angular14-zero-hero" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="section9" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="completed" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="angular14-zero-hero" type="b2602c69:ProjectViewProjectNode" />
+              <item name="angular14-zero-hero" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="section9" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="completed" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="templates" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
           </expand>
           <select />
@@ -292,17 +365,18 @@
       <workItem from="1517608938901" duration="1578000" />
       <workItem from="1517611889091" duration="49428000" />
       <workItem from="1518285573003" duration="362000" />
-      <workItem from="1518285962407" duration="6980000" />
+      <workItem from="1518285962407" duration="12533000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="113840000" />
+    <option name="totallyTimeSpent" value="119393000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="178" y="24" width="1248" height="1028" extended-state="0" />
+    <editor active="true" />
     <layout>
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20646766" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20646766" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3290461" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -341,34 +415,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/mine/section6/beginning-works/main.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mine/section6/lesson32/main.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="931" column="0" lean-forward="true" selection-start-line="931" selection-start-column="0" selection-end-line="931" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mine/section6/lesson32/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="436">
-          <caret line="84" column="65" lean-forward="true" selection-start-line="84" selection-start-column="65" selection-end-line="84" selection-end-column="65" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/section6/lesson1/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="18" column="15" lean-forward="true" selection-start-line="18" selection-start-column="15" selection-end-line="18" selection-end-column="15" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/section6/lesson1/main.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="360">
@@ -547,25 +593,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/section9/completed/main.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="15" column="21" lean-forward="true" selection-start-line="15" selection-start-column="21" selection-end-line="15" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/mine/section7/lesson57/templates/main.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/section9/completed/main.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="49" column="55" lean-forward="true" selection-start-line="49" selection-start-column="55" selection-end-line="49" selection-end-column="70" />
         </state>
       </provider>
     </entry>
@@ -580,14 +612,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="15">
           <caret line="43" column="25" lean-forward="false" selection-start-line="43" selection-start-column="25" selection-end-line="43" selection-end-column="25" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/section9/completed/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="21" column="7" lean-forward="true" selection-start-line="21" selection-start-column="7" selection-end-line="21" selection-end-column="7" />
           <folding />
         </state>
       </provider>
@@ -621,14 +645,14 @@
         <state relative-caret-position="285">
           <caret line="19" column="19" lean-forward="false" selection-start-line="19" selection-start-column="19" selection-end-line="19" selection-end-column="19" />
           <folding>
-            <element signature="e#84378#84578#2" expanded="true" />
-            <element signature="e#84810#84959#2" expanded="true" />
-            <element signature="e#85525#85671#2" expanded="true" />
-            <element signature="e#86045#86211#1" expanded="true" />
-            <element signature="e#100481#100724#2" expanded="true" />
-            <element signature="e#101691#101922#2" expanded="true" />
-            <element signature="e#135100#135290#2" expanded="true" />
-            <element signature="e#135346#135536#2" expanded="true" />
+            <element signature="e#84378#84578#2" expanded="false" />
+            <element signature="e#84810#84959#2" expanded="false" />
+            <element signature="e#85525#85671#2" expanded="false" />
+            <element signature="e#86045#86211#1" expanded="false" />
+            <element signature="e#100481#100724#2" expanded="false" />
+            <element signature="e#101691#101922#2" expanded="false" />
+            <element signature="e#135100#135290#2" expanded="false" />
+            <element signature="e#135346#135536#2" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -664,14 +688,14 @@
         <state relative-caret-position="-1930">
           <caret line="19" column="19" lean-forward="true" selection-start-line="19" selection-start-column="19" selection-end-line="19" selection-end-column="19" />
           <folding>
-            <element signature="e#84378#84578#2" expanded="true" />
-            <element signature="e#84810#84959#2" expanded="true" />
-            <element signature="e#85527#85673#2" expanded="true" />
-            <element signature="e#86047#86213#1" expanded="true" />
-            <element signature="e#100412#100655#2" expanded="true" />
-            <element signature="e#101631#101880#2" expanded="true" />
-            <element signature="e#135084#135274#2" expanded="true" />
-            <element signature="e#135330#135520#2" expanded="true" />
+            <element signature="e#84378#84578#2" expanded="false" />
+            <element signature="e#84810#84959#2" expanded="false" />
+            <element signature="e#85527#85673#2" expanded="false" />
+            <element signature="e#86047#86213#1" expanded="false" />
+            <element signature="e#100412#100655#2" expanded="false" />
+            <element signature="e#101631#101880#2" expanded="false" />
+            <element signature="e#135084#135274#2" expanded="false" />
+            <element signature="e#135330#135520#2" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -705,14 +729,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/mine/section9/lesson65/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="316">
-          <caret line="121" column="74" lean-forward="false" selection-start-line="121" selection-start-column="74" selection-end-line="121" selection-end-column="74" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/mine/section7/lesson57-works/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="724">
@@ -729,10 +745,74 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/section9/completed/main.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="15" column="21" lean-forward="true" selection-start-line="15" selection-start-column="21" selection-end-line="15" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/section9/completed/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="795">
+          <caret line="53" column="0" lean-forward="false" selection-start-line="53" selection-start-column="0" selection-end-line="54" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mine/section9/lesson65/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="27" column="0" lean-forward="true" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/section9/completed/templates/edit.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="3" column="22" lean-forward="true" selection-start-line="3" selection-start-column="22" selection-end-line="3" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mine/section9/lesson65/templates/list.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-14">
+          <caret line="18" column="15" lean-forward="true" selection-start-line="18" selection-start-column="15" selection-end-line="18" selection-end-column="15" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/section9/completed/main.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="461">
+          <caret line="113" column="0" lean-forward="false" selection-start-line="113" selection-start-column="0" selection-end-line="113" selection-end-column="83" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mine/section9/lesson65/templates/edit.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="9" column="42" lean-forward="true" selection-start-line="9" selection-start-column="42" selection-end-line="9" selection-end-column="42" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mine/section9/lesson65/templates/form.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="18" column="26" lean-forward="true" selection-start-line="18" selection-start-column="26" selection-end-line="18" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/mine/section9/lesson65/main.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="11" column="0" lean-forward="true" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
+        <state relative-caret-position="-29">
+          <caret line="301" column="10" lean-forward="true" selection-start-line="301" selection-start-column="10" selection-end-line="301" selection-end-column="10" />
           <folding />
         </state>
       </provider>

@@ -1,0 +1,73 @@
+<div class="col-md-12">
+    <form class="form-inline well well-sm">
+        <span class="fa fa-search"></span><!-- using font awsome -->
+
+        <div class="form-group">
+            <!-- ng-model="search" bind this directly to search in model $scope.search = ""; -->
+            <input type="text" class="form-control" id="name" ng-model="search" placeholder="Search name..."/>
+        </div>
+
+        <span class="fa fa-sort" ></span >
+
+        <div class="form-group" >
+            <select class="form-control" ng-model="order" >
+                <option value="name" >Name (ASC)</option >
+                <option value="-name" >Name (DEC)</option >
+                <option value="email" >Email (ASC)</option >
+                <option value="-email" >Email (DEC)</option >
+            </select >
+        </div >
+
+        <button class="btn btn-primary pull-right" ng-click="showCreateModal()" >Create</button >
+    </form>
+
+    <table class="table table-bordered" infinite-scroll="loadMore()" infinite-scroll-distance="1">
+        <tr>
+            <th class="col-1">#</th>
+
+            <th class="col-2">
+                <div class="sortables">
+                    <span ng-click="order = 'name'" class="fa fa-sort-asc arrow-up"></span>
+                    <span ng-click="order = '-name'" class="fa fa-sort-desc arrow-down"></span>
+                </div>
+                <div class="column-name">Name</div>
+            </th>
+            <th class="col-3">
+                <div class="sortables">
+                    <span ng-click="order = 'email'" class="fa fa-sort-asc"></span>
+                    <span ng-click="order = '-email'" class="fa fa-sort-desc"></span>
+                </div>
+                <div class="column-name">Email</div>
+            </th>
+            <th class="col-4">Phone</th>
+        </tr>
+        <!-- this part will display list of persons -->
+        <!-- search is actually called filter and you bind this sensitiveSearch function to filter so it is called with every ng-repeat -->
+        <tr ng-repeat="person in contacts.persons"
+            ng-style="{'background-color': person.email == contacts.selectedPerson.email ? '#e4e4e4' : ''}"
+            ui-sref="edit({email:person.email})"
+            >
+            <!-- if index of row is selectedIndex you just clicked then give bg-colour to it otherwise add empty color -->
+            <!-- you can do sensitiveSearch -->
+
+            <td>
+                <img ng-src="{{ person.photo | defaultImage:'./avatar.png' }}" alt="" class="img-circle profile-photo">
+            </td><!-- img-circle from bootstrap, profile-photo is custom -->
+            <td>{{ person.name }}</td>
+            <td>{{ person.email }}</td>
+            <td>{{ person.phonenumber}}</td> <!-- filter will  give you this format March 24, 2015-->
+        </tr>
+    </table>
+
+    <div ng-show="contacts.persons.length == 0 && !contacts.isLoading" >
+        <div class="alert alert-info" >
+            <p class="text-center" >No results found for search term '{{ search }}'</p >
+        </div >
+    </div>
+
+    <div class="spinner" ng-show="contacts.isLoading">
+        <span us-spinner="{radius:11, width:5, length: 5, lines:9}" ></span>
+        <p> Loading... </p>
+    </div>
+
+</div>

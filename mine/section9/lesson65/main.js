@@ -10,6 +10,31 @@ var App = angular.module('codecraft', [
     'ui.router'
 ]);
 
+// Defining routes
+// You can use more ten one App.config so this one is dedicated to ui-router
+// injected $stateProvider and $urlRouterProvider which are from ui-router package
+App.config(function ($stateProvider, $urlRouterProvider) {
+    $stateProvider
+        // you define a state by giving a name (list) ) and providing object literal with configuration
+        // which tells the router what to do
+        // list state is associacieted with url: "/"
+        // when you hit that url which template does it need to load and which controller
+
+        // index.html/#/
+        .state('list', {
+            url: "/",
+            templateUrl: 'templates/list.html',
+            controller: 'PersonListController'
+        })
+        // index.html/#/edit/eloy@felix.info
+        .state('edit', {
+            url: "/edit/:email",
+            templateUrl: 'templates/edit.html',
+            controller: 'PersonDetailController'
+        });
+
+    $urlRouterProvider.otherwise('/');
+});
 
 // setup http service to get to api resource
 App.config(function ($httpProvider, $resourceProvider, laddaProvider,$datepickerProvider) {
@@ -57,27 +82,6 @@ App.filter('defaultImage', function () {
         }
         return input;
     }
-});
-
-App.controller('PersonDetailController', function ($scope, ContactService) { // inject ContactService
-
-    $scope.contacts = ContactService;
-    $scope.selectedPersons = ContactService.selectedPerson;
-
-    // to save form call button save and call event save
-    $scope.save = function () {
-
-        // since we want everything to happen on the service ContactService we will create updateContact method on
-        // on the service ContactService
-        // add this method to ContactService
-        $scope.contacts.updateContact($scope.contacts.selectedPerson); // pass selected person to updateContact() on service ContactService
-    };
-
-    /// event remove is called from button Delete on form
-    $scope.remove = function () {
-        $scope.contacts.removeContact($scope.contacts.selectedPerson);
-    }
-
 });
 
 // inject ContactService pass service $modal for angular strip  showCreateModal
@@ -160,15 +164,44 @@ App.controller('PersonListController', function ($scope, $modal, ContactService)
 
 });
 
+App.controller('PersonDetailController', function ($scope, $stateParams, $state, ContactService) { // inject ContactService
+
+    // pass parameters defined in ui router url: "/edit/:email",
+    // :email is a $stateParams
+    console.log($stateParams);
+
+    $scope.contacts = ContactService;
+    // call getPerson to get it and load under $scope.contacts.selectedPerson so edit.html template can use it
+    $scope.contacts.selectedPerson = $scope.contacts.getPerson($stateParams.email);
+
+
+    // to save form call button save and call event save
+    $scope.save = function () {
+
+        // since we want everything to happen on the service ContactService we will create updateContact method on
+        // on the service ContactService
+        // add this method to ContactService
+        // pass selected person to updateContact() on service ContactService
+        $scope.contacts.updateContact($scope.contacts.selectedPerson).then(function () {
+            // once saved go to 'list' view
+            $state.go("list");
+        });
+    };
+
+    /// event remove is called from button Delete on form
+    $scope.remove = function () {
+        $scope.contacts.removeContact($scope.contacts.selectedPerson).then(function () {
+            // once saved go to 'list' view
+            $state.go("list");
+        });
+    }
+
+});
+
 // this is service. Service returns object with data it needs to be at the top of this file otherwhise problem.
 // ContactService returns object with data
 App.service('ContactService', function (Contact, $q, toaster) {
-
-    // https://www.udemy.com/angularjs-from-zero-to-hero/learn/v4/t/lecture/6145402?start=0
     var self = {
-        'addPerson': function (person) {
-            this.persons.push(person); // add new person to persons array
-        },
         'page': 1, // pagination page 1
         'hasMoreData': true, // has more data to display
         'isLoading': false, // currently loading page = false
@@ -176,6 +209,19 @@ App.service('ContactService', function (Contact, $q, toaster) {
         'persons': [],
         'search': null,
         'order': null,
+        // getPerson by (email) which will be used in edit.html form to display person data to edit
+        'getPerson': function (email) {
+            console.log(email);
+            // loop through all persons array
+            // by the way loadContacts bellow is loading all contacts to person array
+            for (var i = 0; i < self.persons.length; i++) {
+                var person = self.persons[i];
+                // if you have a match on email return that person
+                if (person.email === email) {
+                    return person;
+                }
+            }
+        },
         'doSearch': function (search) {
             // reset to staring point as we are making search
             self.hasMoreData = true;
@@ -193,7 +239,6 @@ App.service('ContactService', function (Contact, $q, toaster) {
             self.loadContacts(); // call loadContacts() and that function has params and there is order query parameter
         },
         'loadContacts': function () {
-
             // make a call to get data only
             // load more will be called houndred times but API needs to be called only once if there is
             // hasMoreData set to true and we are not already calling API
@@ -212,6 +257,8 @@ App.service('ContactService', function (Contact, $q, toaster) {
                     console.log(data);
                     // loop through data.results and push it to persons array
                     angular.forEach(data.results, function (person) {
+
+                        // loads all contacts to array persons
                         self.persons.push(new Contact(person));
                     });
 
@@ -244,17 +291,23 @@ App.service('ContactService', function (Contact, $q, toaster) {
             // becouse when we where creating self.persons.push(new Contact(person)); on Contact.get() we created new Contact so we have
             // person tougether with all the methodes attached to it e.g update and you are using it like that person.$update().then(...)
             // no promise
+            var d = $q.defer();
             self.isSaving = true;
             person.$update().then(function () {
                 self.isSaving = false; // you need to put isSaving to template/form.html <button ladda="contacts.isSaving">Save</button >
                 toaster.pop('success', 'Updated ' + person.name);
+                d.resolve();
             });
+            return d.promise;
         },
         'removeContact': function (person) {
 
             console.log('Service Called delete selected person');
             console.log(person);
 
+            // create defer object for promise
+            // 1. when somone calls createContract
+            var d = $q.defer();
             self.isDeleting = true;
             // this will send http delete message to apropriate API end point
             person.$remove().then(function () {
@@ -268,7 +321,9 @@ App.service('ContactService', function (Contact, $q, toaster) {
                 // also you need to remove it from right Person Details Panel
                 self.selectedPerson = null; // null out to remove it from the view
                 toaster.pop('success', 'Deleted ' + person.name);
+                d.resolve();
             });
+            return d.promise;
         },
         // here is that ContactService variable, property on that object which calls factory save method on App.factory("Contact")
         'createContact': function (person) {
