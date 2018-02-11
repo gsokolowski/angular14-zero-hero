@@ -13,6 +13,14 @@ body {
   .spinner p {
     margin-top: 20px; }
 
+/*
+make all elements inside cells <td> place elements in the middle vertically of the cell
+so the image and text is always in the middle verticaly
+ */
+.table > tbody > tr > td {
+  vertical-align: middle;
+  height: 60px; }
+
 .table .col-1 {
   width: 10%; }
 .table .col-2 {
@@ -21,11 +29,9 @@ body {
   width: 30%; }
 .table .col-4 {
   width: 30%; }
-.table tr td {
-  vertical-align: middle; }
-  .table tr td .profile-photo {
-    width: 30px;
-    height: 30px; }
+.table tr td .profile-photo {
+  width: 40px;
+  height: 40px; }
 
 .modal-backdrop.am-fade {
   opacity: .5;
@@ -40,24 +46,23 @@ body {
       opacity: 0; }
 
 .sortables {
+  float: left;
   display: inline-block;
   position: relative;
   width: 20px;
-  height: 20px;
-  vertical-align: middle;
-}
+  height: 20px; }
   .sortables span:first-child {
     position: absolute;
-    top: 0;
-  }
+    top: -3px;
+    height: 12px; }
   .sortables span:last-child {
     position: absolute;
-    bottom: 0;
-  }
+    bottom: 6px;
+    height: 12px; }
   .sortables span {
     color: lightgray;
-    font-size: 18px;
-  }
+    font-size: 20px; }
   .sortables span:hover {
-    color: #002a80;
-  }
+    color: #002a80; }
+
+/*# sourceMappingURL=main.css.map */

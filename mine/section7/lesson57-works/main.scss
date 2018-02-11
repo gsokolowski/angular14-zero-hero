@@ -1,0 +1,93 @@
+body {
+  padding-top: 50px;
+}
+
+.main-content {
+  padding: 40px 15px;
+}
+
+.spinner {
+  position: relative;
+  width: 50px;
+  height: 50px;
+  margin: 0 auto;
+  padding: 40px 0;
+  p {
+    margin-top: 20px;
+  }
+}
+/*
+make all elements inside cells <td> place elements in the middle vertically of the cell
+so the image and text is always in the middle verticaly
+ */
+.table>tbody>tr>td {
+  vertical-align: middle;
+  height: 60px;
+}
+
+.table {
+  .col-1 {
+    width: 10%;
+  }
+  .col-2 {
+    width: 30%;
+  }
+  .col-3 {
+    width: 30%;
+  }
+  .col-4 {
+    width: 30%;
+  }
+  tr {
+    td {
+      .profile-photo {
+        width: 40px;
+        height: 40px;
+      }
+    }
+  }
+}
+
+
+
+.modal-backdrop.am-fade {
+  opacity: .5;
+  transition: opacity .15s linear;
+  &.ng-enter {
+    opacity: 0;
+    &.ng-enter-active {
+      opacity: .5;
+    }
+  }
+  &.ng-leave {
+    opacity: .5;
+    &.ng-leave-active {
+      opacity: 0;
+    }
+  }
+}
+
+.sortables {
+  float: left;
+  display: inline-block;
+  position: relative;
+  width: 20px;
+  height: 20px;
+  span:first-child {
+    position: absolute;
+    top: -3px;
+    height:12px;
+  }
+  span:last-child {
+    position: absolute;
+    bottom: 6px;
+    height:12px;
+  }
+  span {
+    color: lightgray;
+    font-size: 20px;
+  }
+  span:hover {
+    color: #002a80;
+  }
+}
